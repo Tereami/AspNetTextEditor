@@ -1,0 +1,15 @@
+﻿@model TextEditorViewModel
+@{
+    ViewData["Title"] = "Редактирование";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form method="post" asp-action="Edit" asp-route-id="@Model.Id" enctype="multipart/form-data">
+        <label asp-for="@Model.Title"></label>
+        <input asp-for="@Model.Title" />
+        <textarea id="summernote" name="editordata">
+             @Model.Message
+        </textarea>
+        <input type="submit" value="Сохранить" />
+    </form>
+</div>
